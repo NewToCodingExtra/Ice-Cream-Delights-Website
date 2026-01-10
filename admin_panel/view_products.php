@@ -1,21 +1,13 @@
 <?php
     include "../include/init_cookie.php";
-
-    if(isset($_POST['delete'])) {
-        $p_id = trim($_POST['product_id']);
-
-        $delete_product = $conn->prepare("DELETE FROM products WHERE id =?");
-        $delete_product->execute([$p_id]);
-
-        $success_msg[] = 'product is successfully deleted';
-    }
+    include "../include/delete_product.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Icce Cream Delights - View Products</title>
+    <title>Ice Cream Delights - View Products</title>
     <?php include "../include/include_styling.php"; ?>
 </head>
 <body>
@@ -65,5 +57,6 @@
     </div>
 
     <?php include "../include/include_script.php"; ?>
+    
 </body>
 </html>
