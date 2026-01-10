@@ -129,7 +129,7 @@ section,
 }
 /*CUSTOM SCROLLING*/
 ::-webkit-scrollbar {
-    margin: .5rem;
+    width: 10px;
 }
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 20px;
