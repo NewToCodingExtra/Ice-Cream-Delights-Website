@@ -49,7 +49,7 @@ html {
     width: 0;
     border-radius: 30px;
     background-color: var(--main-color);
-    z-index: 1;
+    z-index: -1;
     transition: width 0.3s ease;
     text-align: center;
 }
@@ -433,40 +433,51 @@ header .right {
     border: 2px solid var(--main-color);
 }
 /* Dashboard Section */
-.dashboard {
-    padding: 2rem;
-}
-
 .dashboard .box-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
 }
-
 .dashboard .box-container .box {
-    background-color: var(--white-alpha-25);
-    border: 2px solid var(--white-alpha-40);
-    backdrop-filter: var(--backdrop-filter);
-    box-shadow: var(--box-shadow);
-    padding: 2rem;
     text-align: center;
-    border-radius: 0.5rem;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    padding-bottom: 3rem;
 }
-
 .dashboard .box-container .box h3 {
-    font-size: 2rem;
-    color: var(--main-color);
-    margin-bottom: 1rem;
-    text-transform: capitalize;
+    font-size: 2.7rem;
+    margin-bottom: -1rem;
 }
-
 .dashboard .box-container .box p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #666;
+    padding: 1rem;
+    font-size: 1.8 rem;
+    text-transform: capitalize;
+    margin: 1rem 0;
 }
-
-.dashboard .box-container .box .btn {
-    display: inline-block;
+/*media screen*/
+@media screen and (max-width:991px){
+    .toggle-btn {
+        display: block;
+    }
+    .sidebar {
+        padding-top: 4rem;
+        position: fixed;
+        width: 0;
+        transition: .5s;
+        z-index: 101;
+        top: 7%;
+    }
+    .sidebar.active {
+        width: 300px;
+    }
+    .sidebar .profile {
+        margin-top: .5rem;
+    }
+    .section {
+        width: 100%;
+    }
+    .dashboard .box-container {
+        grid-template-columns: 1fr;
+    }
 }
