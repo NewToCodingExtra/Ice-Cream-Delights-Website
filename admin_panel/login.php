@@ -18,7 +18,6 @@ if(isset($_POST['submit'])) {
         if(password_verify($password, $user['password'])) {
             setcookie('seller_id', $user['id'], time() + 60 * 60 * 24 * 30, '/');
             $success_msg[] = "Login successful! Enjoy the service😊";
-            $_SESSION['redirect_after_alert'] = "dashboard.php";
         } else 
             $warning_msg[] = "Wrong password! Try again.";
     } else {
