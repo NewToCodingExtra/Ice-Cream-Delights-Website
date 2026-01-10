@@ -542,6 +542,70 @@ header .right {
 .show-post .box-container .box button {
     width: 30%;
 }
+.post-editor {
+    width: 100%;
+}
+/*READ_PRODUCT*/
+.read-post {
+    display: flex;
+    flex-direction: column;
+}
+.read-post form {
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+}
+.read-post form .status {
+    border-radius: .5rem;
+    padding: .5rem 2rem;
+    font-size: 1.1rem;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.read-post form .price {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.read-post form .image {
+    width: 100%;
+    border-radius: .5rem;
+    margin-top: 1.5rem;
+}
+.read-post form .title {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.read-post form .content {
+    line-height: 2;
+    font-size: 1.2rem;
+    color: gray;
+    padding: 1rem 0;
+}
+.read-post form .flex-btn {
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.read-post form .flex-btn .btn {
+    flex: 1;
+    margin: 0 5px;
+    text-align: center;
+    height: 50px;
+}
+.read-post form .flex-btn a {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
 /*media screen*/
 @media screen and (max-width:991px){
     .toggle-btn {

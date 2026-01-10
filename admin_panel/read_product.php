@@ -44,7 +44,7 @@
                                 <div class="flex-btn">
                                     <a href="edit_product.php?id=<?= $fetch_products['id']; ?>" class="btn">edit</a>
                                     <button type="submit" name="delete" class="btn" onclick="return confirm('It will delete this product, proceed?');">delete</button>
-                                    <a href="view_product.php?post_id=<?= $fetch_products['id']; ?>" class="btn">go back</a>
+                                    <a href="view_products.php" class="btn">go back</a>
                                 </div>
                             </form>
                             <?php 
