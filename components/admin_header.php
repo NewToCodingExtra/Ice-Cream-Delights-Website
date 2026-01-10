@@ -4,7 +4,7 @@
     </div>
     <div class="right">
         <div class="bx bxs-user" id="user-btn"></div>
-        <div class="toggle-btn"><i class="bx bxs-menu"></i></div>
+        <div class="toggle-btn" id="toggle-btn"><i class="bx bx-menu"></i></div>
     </div>
     <div class="profile-detail">
         <?php
@@ -44,7 +44,7 @@
         <div class="navbar">
             <ul>
                 <li><a href="dashboard.php"><i class="bx bxs-home-smile"></i>Dashboard</a></li>
-                <li><a href="add_products.php"><i class="bx bxs-shopping-bags"></i>Add products</a></li>
+                <li><a href="../admin_panel/add_products.php"><i class="bx bxs-shopping-bags"></i>Add products</a></li>
                 <li><a href="view_products.php"><i class="bx bxs-food-menu"></i>View Products</a></li>
                 <li><a href="user_accounts.php"><i class="bx bxs-user-detail"></i>Accounts</a></li>
                 <li><a href="../components/logout.php" onclick="return confirm('logout from this website?');"><i class="bx bxs-log-out"></i>Logout</a></li>

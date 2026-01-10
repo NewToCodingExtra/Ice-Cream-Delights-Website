@@ -271,6 +271,7 @@ header {
 }
 header .right {
     display: flex;
+    align-items: center;
 }
 #user-btn,
 .toggle-btn {
@@ -280,9 +281,18 @@ header .right {
     cursor: pointer;
     transition: .6s;
 }
+#toggle-btn.bx {
+    display: inline-block !important;
+    font-size: 2rem !important;
+    vertical-align: middle;
+}
 .toggle-btn {
     margin-left: .5rem;
     display: none;
+}
+.toggle-btn i {
+    color: var(--pink-color);
+    font-size: 2rem;
 }
 .profile-detail {
     background-color: var(--white-alpha-25);
@@ -451,7 +461,7 @@ header .right {
 }
 .dashboard .box-container .box p {
     padding: 1rem;
-    font-size: 1.8 rem;
+    font-size: 1.8rem;
     text-transform: capitalize;
     margin: 1rem 0;
 }

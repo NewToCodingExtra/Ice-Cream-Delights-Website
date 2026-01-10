@@ -1,13 +1,5 @@
 <?php
-    include '../components/connect.php';
-
-    if(isset($_COOKIE['seller_id'])) {
-        $seller_id = $_COOKIE['seller_id'];
-    } else {
-        $seller_id = '';
-        header("Location: login.php");
-        exit();
-    }
+    include "../include/init_cookie.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,11 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice Cream Delights - Dashboard Page</title>
-    <link rel="stylesheet" type="text/css" href="../css/admin_style.css">
-    <?php 
-        include "../include/awesome_fonts.php"; 
-        include "../include/boxicons.php";
-    ?>
+    <?php include "../include/include_styling.php"; ?>
 </head>
 <body>
     
@@ -130,9 +118,6 @@
             </div>
         </section>
     </div>
-<?php 
-    include "../include/sweetalert.php"; 
-    require "../components/alert.php";
-?>
+    <?php include "../include/include_script.php"; ?>
 </body>
 </html>
