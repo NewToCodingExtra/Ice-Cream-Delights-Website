@@ -73,8 +73,8 @@ if(isset($_POST['submit'])) {
             exit();
         }
         if(!empty($warning_msg)) {
-        foreach($warning_msg as $msg){
-            echo '<script>swal("'.$msg.'", "", "warning");</script>';
+            foreach($warning_msg as $msg){
+                echo '<script>swal("'.$msg.'", "", "warning");</script>';
         }
     }
     ?>
