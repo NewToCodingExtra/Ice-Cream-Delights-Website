@@ -55,29 +55,23 @@ if(isset($_POST['submit'])) {
         }
     }
 
-    // Update image
     if(isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
         $image = $_FILES['image']['name'];
         $image_tmp_name = $_FILES['image']['tmp_name'];
         $image_size = $_FILES['image']['size'];
         
-        // Check file size
         if($image_size > 2 * 1024 * 1024) {
             $warning_msg[] = 'Image size is too large! Maximum 2MB allowed.';
         } else {
-            // Rename image with unique ID
             $ext = pathinfo($image, PATHINFO_EXTENSION);
             $rename = unique_id() . '.' . $ext;
             $image_folder = '../uploaded_files/' . $rename;
             
-            // Upload new image
             if(move_uploaded_file($image_tmp_name, $image_folder)) {
-                // Delete old image file if it exists and is not empty
                 if(!empty($prev_img) && file_exists('../uploaded_files/' . $prev_img)) {
                     unlink('../uploaded_files/' . $prev_img);
                 }
                 
-                // Update database with new image filename
                 $update_image = $conn->prepare("UPDATE sellers SET image = ? WHERE id = ?");
                 $update_image->execute([$rename, $seller_id]);
                 $success_msg[] = 'Profile picture updated successfully!';

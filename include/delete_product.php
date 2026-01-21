@@ -7,7 +7,7 @@ if(isset($_POST['delete'])) {
     $delete_image->execute([$p_id, $seller_id]);
     $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
 
-    if($fetch_delete_image && $fetch_delete_image['image'] != '') {
+    if($fetch_delete_image && $fetch_delete_image['image'] !== 'default-product.png' && $fetch_delete_image['image'] != '') {
         $image_path = '../uploaded_files/' . $fetch_delete_image['image'];
         if(file_exists($image_path)) {
             unlink($image_path);
