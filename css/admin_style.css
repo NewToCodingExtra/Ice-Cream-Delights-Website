@@ -111,6 +111,7 @@ input[type='submit']:hover {
 .heading img {
     margin-top: .5rem;
     width: 150px !important;
+    height: auto;
 }
 section,
 .post-editor {
@@ -668,7 +669,14 @@ header .right {
     padding: .5rem 0;
     margin-bottom: 1rem;
 }
-
+.form-container .heading img {
+    width: 150px !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    padding: 0;
+    padding-bottom: 40px;
+    background-color: transparent !important;
+}
 /*media screen*/
 @media screen and (max-width:991px){
     .toggle-btn {
