@@ -62,7 +62,6 @@
             }
         }
     }
-    
 
     if(isset($_POST['delete_image'])) {
         $product_id = $_POST['product_id'];
@@ -73,7 +72,7 @@
         }
         
         $delete_image = $conn->prepare("UPDATE products SET image = ? WHERE id = ? AND seller_id = ?");
-        $delete_image->execute(['default-product.png', $product_id, $seller_id]);
+        $delete_image->execute(['', $product_id, $seller_id]);
         
         $success_msg[] = 'Product image reset to default!';
     }
