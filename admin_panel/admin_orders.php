@@ -11,7 +11,7 @@
 
     if(isset($_POST['delete_order'])) {
         $delete_id = trim($_POST['order_id']);
-        $verify_delete = $conn->prepare("SELECT FROM orders WHERE id = ?");
+        $verify_delete = $conn->prepare("SELECT * FROM orders WHERE id = ?");
         $verify_delete->execute([$delete_id]);
 
         if($verify_delete->rowCount() > 0) {
@@ -42,7 +42,15 @@
             </div>
             <div class="box-container">
                 <?php 
-                    $select_order = $conn->prepare("SELECT * FROM orders WHERE  seller_id = ?");
+                    $select_order = $conn->prepare("
+                        SELECT 
+                            o.*, 
+                            p.name AS product_name,
+                            p.price AS unit_price
+                        FROM orders o
+                        JOIN products p ON o.product_id = p.id
+                        WHERE o.seller_id = ?
+                    ");
                     $select_order->execute([$seller_id]);
 
                     if($select_order->rowCount() > 0) {
@@ -57,8 +65,10 @@
                             <p>user id: <span><?= $fetch_order['user_id'] ?></span></p>
                             <p>placed on: <span><?= $fetch_order['date'] ?></span></p>
                             <p>user number: <span><?= $fetch_order['number'] ?></span></p>
+                            <p>product ordered: <span><?= $fetch_order['product_name'] ?></span></p>
+                            <p>unit price: <span>₱<?= number_format((float)str_replace('₱', '', $fetch_order['unit_price']), 2); ?></span></p>
                             <p>quantity: <span><?= $fetch_order['qty'] ?></span></p>
-                            <p>total price: <span><?= $fetch_order['price'] ?></span></p>
+                            <p>total price: <span>₱<?= number_format($fetch_order['price'], 2); ?></span></p>
                             <p>payment method: <span><?= $fetch_order['method'] ?></span></p>
                             <p>user address: <span><?= $fetch_order['address'] ?></span></p>
                         </div>

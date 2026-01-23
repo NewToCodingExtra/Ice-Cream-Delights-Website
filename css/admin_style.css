@@ -830,7 +830,7 @@ header .right {
 .order-container .box-container .box {
     padding: 2rem;
     padding-left: 2rem;  
-    padding-top: 3rem; 
+    padding-top: 2.5rem; 
     margin: 0;
     border-radius: 1.5rem;
     position: relative;
@@ -981,6 +981,180 @@ header .right {
 .order-container .empty p {
     font-size: 20px;
     padding-bottom: 0;
+}
+/*Users page*/
+.user-container {
+    width: 75vw;
+    min-height: 100vh;
+    padding: 4%;
+    margin: 8% 5%;
+    margin-bottom: 2%;
+}
+.user-container .heading {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+.user-container .heading h1 {
+    text-transform: capitalize;
+    color: var(--main-color);
+    font-weight: bolder;
+}
+.user-container .heading img {
+    margin-top: 0.5rem;
+    width: 150px !important;
+    height: auto;
+}
+.user-container .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 3rem;
+}
+.user-container .box-container .box {
+    background-color: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+.user-container .box-container .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--main-color), var(--pink-color));
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+.user-container .box-container .box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(218, 98, 133, 0.35);
+}
+.user-container .box-container .box:hover::before {
+    width: 100%;
+    opacity: 0.15;
+}
+.user-container .box-container .box .user-avatar {
+    position: relative;
+    margin-bottom: 1.5rem;
+    z-index: 1;
+}
+.user-container .box-container .box .user-avatar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--pink-opacity), transparent);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.user-container .box-container .box:hover .user-avatar::before {
+    opacity: 1;
+}
+.user-container .box-container .box .user-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 0.5rem;
+    background: linear-gradient(135deg, var(--white-alpha-40), var(--white-alpha-25));
+    border: 3px solid var(--pink-color);
+    box-shadow: 0 5px 15px rgba(218, 98, 133, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.user-container .box-container .box:hover .user-avatar img {
+    transform: scale(1.05);
+    border-color: var(--main-color);
+}
+.user-container .box-container .box .user-details {
+    width: 100%;
+    line-height: 2;
+    z-index: 1;
+}
+.user-container .box-container .box .user-details p {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: #666;
+    text-transform: capitalize;
+}
+.user-container .box-container .box .user-details .user-id {
+    font-size: 0.95rem;
+    color: #999;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+.user-container .box-container .box .user-details .user-id span {
+    color: var(--pink-color);
+    font-weight: 700;
+    text-transform: none;
+}
+.user-container .box-container .box .user-details .user-name {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.user-container .box-container .box .user-details .user-email {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+.user-container .box-container .box .user-details .user-email span {
+    color: var(--pink-color);
+    font-weight: 600;
+    text-transform: none;
+    word-break: break-word;
+}
+.user-container .empty {
+    background: linear-gradient(135deg, var(--white-alpha-25), var(--white-alpha-40));
+    border: 2px dashed var(--main-color);
+    padding: 4rem 3rem;
+    border-radius: 1.5rem;
+    width: 60vw;
+    margin: 3rem auto;
+    text-align: center;
+}
+.user-container .empty::before {
+    content: '👥';
+    display: block;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.user-container .empty p {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    margin-bottom: 0;
+    line-height: 1.8;
+    font-weight: 500;
 }
 /*media screen*/
 @media screen and (max-width:991px){
