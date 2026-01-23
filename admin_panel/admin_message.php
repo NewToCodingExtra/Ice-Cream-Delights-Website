@@ -1,6 +1,19 @@
 <?php
     include "../include/init_cookie.php";
 
+    if(isset($_POST['delete_msg'])) {
+        $delete_id = trim($_POST['delete_id']);
+        $verify_delete = $conn->prepare("SELECT * FROM message WHERE id = ?");
+        $verify_delete->execute([$delete_id]);
+
+        if($verify_delete->rowCount() > 0) {
+            $delete_msg = $conn->prepare("DELETE FROM message WHERE id = ?");
+            $delete_msg->execute([$delete_id]);
+            $success_msg[] = 'Message deleted successfully!';
+        } else {
+            $warning_msg[] = 'Message already deleted!';
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

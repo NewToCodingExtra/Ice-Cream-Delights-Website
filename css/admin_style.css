@@ -443,13 +443,6 @@ header .right {
     background-color: var(--pink-opacity);
     border: 2px solid var(--main-color);
 }
-/* Dashboard Section */
-/* .dashboard .box-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-} */
 .dashboard .box-container .box {
     text-align: center;
     border-radius: .5rem;
@@ -545,6 +538,47 @@ header .right {
 }
 .post-editor {
     width: 100%;
+}
+.show-post .empty {
+    background: linear-gradient(135deg, var(--white-alpha-25), var(--white-alpha-40));
+    border: 2px dashed var(--main-color);
+    padding: 4rem 3rem;
+    border-radius: 1.5rem;
+    width: 60vw;
+    margin: 3rem auto;
+    text-align: center;
+}
+.show-post .empty::before {
+    content: '🍦';
+    display: block;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.show-post .empty p {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    margin-bottom: 0;
+    line-height: 1.8;
+    font-weight: 500;
+}
+.show-post .empty .btn {
+    margin-top: 1.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+.show-post .empty .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(218, 98, 133, 0.35);
 }
 /*READ_PRODUCT*/
 .read-post {
@@ -676,6 +710,277 @@ header .right {
     padding: 0;
     padding-bottom: 40px;
     background-color: transparent !important;
+}
+/*message page*/
+.message-container {
+    width: 75vw;
+    min-height: 100vh;
+    padding: 4%;
+    margin: 8% 5%;
+    margin-bottom: 2%;
+}
+.message-container .box-container {
+    gap: 2rem;
+    align-items: stretch;  
+}
+.message-container .box-container .box {
+    line-height: 1.8;
+    padding: 2.5rem;
+    margin: 0; 
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.message-container .box-container .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--main-color), var(--pink-color));
+    transition: width 0.3s ease;
+}
+.message-container .box-container .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(218, 98, 133, 0.3);
+}
+.message-container .box-container .box:hover::before {
+    width: 100%;
+    opacity: 0.1;
+}
+.message-container .box-container .box .name {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.message-container .box-container .box h4 {
+    text-transform: capitalize;
+    color: var(--pink-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.message-container .box-container .box p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+.message-container .box-container .box form {
+    margin-top: auto;
+}
+.message-container .box-container .box .btn {
+    width: 100%;
+    margin: 0;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, var(--white-alpha-25), var(--white-alpha-40));
+    transition: all 0.3s ease;
+}
+.message-container .box-container .box .btn:hover {
+    background: var(--main-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(218, 98, 133, 0.4);
+}
+.message-container .box-container .box .btn::before {
+    display: none;  
+}
+.message-container .box-container .box .name::before {
+    content: '✉';
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--pink-color);
+}
+.message-container .empty {
+    background: linear-gradient(135deg, var(--white-alpha-25), var(--white-alpha-40));
+    border: 2px dashed var(--main-color);
+    padding: 3rem;
+    border-radius: 1.5rem;
+}
+.message-container .empty::before {
+    content: '📭';
+    display: block;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+/*Order Page*/
+.order-container {
+    width: 75vw;
+    min-height: 100vh;
+    padding: 4%;
+    margin: 8% 5%;
+    margin-bottom: 2%;
+}
+.order-container .box-container {
+    gap: 2.5rem;
+    align-items: stretch;
+}
+.order-container .box-container .box {
+    padding: 2rem;
+    padding-left: 2rem;  
+    padding-top: 3rem; 
+    margin: 0;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.order-container .box-container .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--main-color), var(--pink-color));
+    transition: width 0.3s ease, opacity 0.3s ease;
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+.order-container .box-container .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(218, 98, 133, 0.3);
+}
+.order-container .box-container .box:hover::before {
+    width: 100%;
+    opacity: 0.15;
+}
+.order-container .box-container .box .status {
+    position: absolute;
+    left: 1.5rem;
+    top: -0.8rem; 
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-radius: 2rem;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.9));
+    border: 2px solid var(--pink-color);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: 0 4px 15px rgba(218, 98, 133, 0.3);
+    letter-spacing: 0.5px;
+    z-index: 10;
+    min-width: 120px;
+    text-align: center;
+}
+.order-container .box-container .box .detail {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    flex-grow: 1;
+}
+.order-container .box-container .box .detail p {
+    color: #666;
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-bottom: 0.4rem;
+}
+.order-container .box-container .box .detail p:first-child {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+.order-container .box-container .box .detail span {
+    text-transform: none;
+    color: var(--pink-color);
+    font-weight: 600;
+}
+
+.order-container .box-container .box form {
+    margin-top: auto;
+}
+.order-container .box-container .box select.box {
+    width: 100% !important;
+    margin: 0 0 1rem 0 !important;
+    padding: 0.8rem 1rem !important;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--main-color);
+    font-weight: 500;
+    height: auto;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--white-alpha-25);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23da6285' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem !important;
+    border: 2px solid var(--white-alpha-40) !important;
+    border-radius: 0.8rem !important;
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+.order-container .box-container .box select.box:focus {
+    outline: none;
+    border-color: var(--pink-color) !important;
+    box-shadow: 0 0 0 4px rgba(218, 98, 133, 0.15);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.order-container .box-container .box select.box option {
+    padding: 1rem !important;
+    background-color: #fff;
+    color: var(--main-color);
+    font-size: 1rem;
+    font-weight: 500;
+}
+.order-container .box-container .box select.box option:disabled {
+    color: #bbb;
+    font-style: italic;
+    background-color: #f8f8f8;
+}
+.order-container .box-container .box select.box option:checked {
+    background: var(--pink-opacity) !important;
+    color: var(--main-color);
+    font-weight: 600;
+}
+.order-container .box-container .box .flex-btn {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+.order-container .box-container .box .flex-btn .btn {
+    flex: 1;
+    margin: 0 !important;
+    padding: 0.9rem 1.5rem !important;
+    font-size: 0.95rem;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 0;
+}
+.order-container .empty {
+    background: linear-gradient(135deg, var(--white-alpha-25), var(--white-alpha-40));
+    border: 2px dashed var(--main-color);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    width: 50vw;
+    margin: 2rem auto;
+}
+.order-container .empty::before {
+    content: '📦';
+    display: block;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.order-container .empty p {
+    font-size: 20px;
+    padding-bottom: 0;
 }
 /*media screen*/
 @media screen and (max-width:991px){
